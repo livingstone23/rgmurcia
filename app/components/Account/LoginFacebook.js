@@ -15,20 +15,16 @@ export default function LoginFacebook(props) {
 
     const login = async () => {
 
-        console.log("FacebookApi.application_id");
-        console.log(FacebookApi.application_id);
-        console.log("FacebookApi.permissions");
-        console.log(FacebookApi.permissions);
+        // console.log("FacebookApi.application_id");
+        // console.log(FacebookApi.application_id);
+        // console.log("FacebookApi.permissions");
+        // console.log(FacebookApi.permissions);
 
         const { type, token } = await Facebook.logInWithReadPermissionsAsync(
             FacebookApi.application_id,
             { permissions: FacebookApi.permissions }
         );
         
-        console.log("type");
-        console.log(type);
-        console.log("token");
-        console.log(token);
 
         if(type === "success"){
                 setIsLoading(true);

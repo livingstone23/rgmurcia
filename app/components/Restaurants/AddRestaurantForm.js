@@ -18,7 +18,7 @@ const WidthScreen = Dimensions.get("window").width;
 
 export default function AddRestaurantForm(props) {
 
-    const { toastRef, setIsLoading, navigation } = props;
+    const { toastRef, setIsLoading, navigation, setIsReloadRestaurants } = props;
     const [ imagesSelected, setImagesSelected ] = useState([]);
 
     const [restaurantName, setRestaurantName ] = useState("");
@@ -37,12 +37,12 @@ export default function AddRestaurantForm(props) {
             toastRef.current.show("Tienes que localizar el restaurante en el mapa", 1500)
         } else {
             setIsLoading(true);
-            console.log("Todo correcto");
-            console.log("imagesSelected");
-            console.log(imagesSelected);
+            // console.log("Todo correcto");
+            // console.log("imagesSelected");
+            // console.log(imagesSelected);
             uploadImageStorage(imagesSelected).then(arrayImages => {
-                console.log("arrayImages");
-                console.log(arrayImages);
+                // console.log("arrayImages");
+                // console.log(arrayImages);
                 db.collection("restaurants")
                 .add({
                     name: restaurantName,
@@ -58,6 +58,7 @@ export default function AddRestaurantForm(props) {
                 })
                 .then(() => {
                     setIsLoading(false);
+                    setIsReloadRestaurants(true);
                     navigation.navigate("Restaurants");
                 })
                 .catch(() => {

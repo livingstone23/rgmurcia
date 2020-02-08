@@ -8,14 +8,14 @@ import * as firebase from 'firebase';
 
 export default function ListRestaurants(props) {
 
-    const { restaurants, isLoading, handleLoadMora } = props;
+    const { restaurants, isLoading, handleLoadMora, navigation } = props;
 
     return (
         <View >
            {restaurants ? (
                <FlatList 
                     data={restaurants}
-                    renderItem={restaurant => <Restaurant restaurant={restaurant} />}
+                    renderItem={restaurant => <Restaurant restaurant={restaurant}  navigation={navigation}/>}
                     keyExtractor={(item, index) => index.toString()}
                     onEndReached={handleLoadMora}
                     onEndReachedThreshold={0}
@@ -35,7 +35,7 @@ export default function ListRestaurants(props) {
 
 
 function Restaurant (props) {
-    const { restaurant } = props
+    const { restaurant, navigation } = props
     const { name, address, description, images } = restaurant.item.restaurant;
     const [ imageRestaurant, setImageRestaurant ] = useState(null);
 
@@ -48,7 +48,8 @@ useEffect(() => {
 })
 
     return(
-        <TouchableOpacity onPress={() => console.log('Ir al restaurante. ')}>
+        <TouchableOpacity 
+            onPress={() => navigation.navigate("Restaurant",{ restaurant }) }>
             <View style={styles.viewRestaurant}>      
                 <View style={styles.viewRestaurantImage}>
                     <Image 

@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 
 import RestaurantsScreenStacks from './RestaurantsStacks';
 import TopListScreenStacks from './TopListStacks';
-import SearchSreenStacks from './RestaurantsStacks';
+import SearchSreenStacks from './SearchStacks';
 import AccountScreenStack from './AccountStacks';
 
 const NavigationStacks = createBottomTabNavigator({

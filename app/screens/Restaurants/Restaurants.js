@@ -92,6 +92,7 @@ export default function Restaurants(props) {
                 restaurants={restaurants}
                 isLoading={isLoading}
                 handleLoadMora={handleLoadMora}
+                navigation={navigation}
             />
 
             {user && <AddRestaurantButton 

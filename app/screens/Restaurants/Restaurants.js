@@ -18,7 +18,7 @@ export default function Restaurants(props) {
     const [ isLoading, setIsLoading ] = useState(false);
     const [ totalRestaurants, setTotalRestaurants ] = useState(0);
     const [ isReloadRestaurants, setIsReloadRestaurants ] = useState(false);
-    const limitRestaurants = 8;
+    const limitRestaurants = 9;
 
     useEffect(() => {
         firebase.auth().onAuthStateChanged(userInfo =>{
@@ -57,9 +57,10 @@ export default function Restaurants(props) {
         setIsReloadRestaurants(false);
     }, [isReloadRestaurants]);
 
-    const handleLoadMora = async () => {
+    const handleLoadMore = async () => {
         const resultRestaurants = [];
 
+        console.log('si entra a handleLoadMore');
         //Si es menor que total restaurant 
         restaurants.length < totalRestaurants && setIsLoading(true);
 
@@ -91,7 +92,7 @@ export default function Restaurants(props) {
             <ListRestaurants 
                 restaurants={restaurants}
                 isLoading={isLoading}
-                handleLoadMora={handleLoadMora}
+                handleLoadMore={handleLoadMore}
                 navigation={navigation}
             />
 

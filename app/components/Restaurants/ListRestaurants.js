@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 
 export default function ListRestaurants(props) {
 
-    const { restaurants, isLoading, handleLoadMora, navigation } = props;
+    const { restaurants, isLoading, handleLoadMore, navigation } = props;
 
     return (
         <View >
@@ -17,7 +17,7 @@ export default function ListRestaurants(props) {
                     data={restaurants}
                     renderItem={restaurant => <Restaurant restaurant={restaurant}  navigation={navigation}/>}
                     keyExtractor={(item, index) => index.toString()}
-                    onEndReached={handleLoadMora}
+                    onEndReached={handleLoadMore}
                     onEndReachedThreshold={0}
                     ListFooterComponent={<FooterList isLoading={isLoading} />}
                />
@@ -74,7 +74,7 @@ function FooterList (props) {
 
     if(isLoading) {
       return (
-        <View style={styles.loadingRestaurants}>
+        <View style={styles.loaderRestaurant}>
             <ActivityIndicator size="large" />
         </View>
       )

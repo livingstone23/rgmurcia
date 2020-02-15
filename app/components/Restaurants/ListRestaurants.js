@@ -49,7 +49,7 @@ useEffect(() => {
 
     return(
         <TouchableOpacity 
-            onPress={() => navigation.navigate("Restaurant",{ restaurant }) }>
+            onPress={() => navigation.navigate("Restaurant",{ restaurant:  restaurant.item.restaurant }) }>
             <View style={styles.viewRestaurant}>      
                 <View style={styles.viewRestaurantImage}>
                     <Image 

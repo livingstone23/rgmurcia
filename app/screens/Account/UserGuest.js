@@ -16,7 +16,7 @@ function UserGuest(props) {
                 style={styles.image}
                 resizeMode="contain"
             />
-            <Text style={styles.title}>Consulta tu perfil en Red Gastronomica Murcia</Text>
+            <Text style={styles.title}>Crea tu perfil en La Red Gastronomica Murcia 2020</Text>
             <Text style={styles.description}>
                 ¿Como describirias tu mejor experiencia? Busca y visualiza los mejores restaurantes de una forma sencilla, vota cual te ha gustado mas y comenta como ha sido tu experiencia.
             </Text>

@@ -4,7 +4,7 @@ import SearchScreen from "../screens/Search";
 const SearchScreenStacks = createStackNavigator({
     Restaurants:{
         screen: SearchScreen,
-        navigationOptions: ()=>({
+        navigationOptions: ()=> ({
             title: "Busca tu restaurante"
         })
     }

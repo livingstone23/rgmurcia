@@ -60,7 +60,7 @@ export default function Restaurants(props) {
     const handleLoadMore = async () => {
         const resultRestaurants = [];
 
-        console.log('si entra a handleLoadMore');
+        //console.log('si entra a handleLoadMore');
         //Si es menor que total restaurant 
         restaurants.length < totalRestaurants && setIsLoading(true);
 

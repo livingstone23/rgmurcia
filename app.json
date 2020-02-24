@@ -27,7 +27,14 @@
       "supportsTablet": true
     },
     "android": {
-      "permissions": ["CAMERA_ROLL","LOCATION"]
-    }
+      "package": "com.livingstonecano.rutagastronomicamurcia",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA_ROLL",
+        "LOCATION"
+      ]
+    },
+    "description": "Ruta Gastronomica Murcia 2020",
+    "githubUrl": "https://github.com/livingstone23/rgmurcia.git"
   }
 }

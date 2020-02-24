@@ -150,13 +150,13 @@ function Restaurant(props) {
     const { id, name, images } = restaurant.item;
     const [imageRestaurant, setImageRestaurant] = useState(null); 
 
-    console.log('name');
-    console.log(name);
+    // console.log('name');
+    // console.log(name);
 
     useEffect(()=>{
         const image = images[0];
-        console.log('image');
-        console.log(image);
+        // console.log('image');
+        // console.log(image);
         firebase.storage().ref(`restaurant-images/${image}`).getDownloadURL().then(response =>{
             setImageRestaurant(response);
         })
